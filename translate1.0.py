@@ -2,7 +2,7 @@
 #       Filename :		translate 1.0       
 #       Creator:		what-is-me           
 #       Created date:	2021/03/23
-#       Location:       https://github.com/what-is-me/
+#       Location:       https://github.com/what-is-me/wordlisttranslate
 #====================================================================
 
 
