@@ -19,6 +19,7 @@ import tqdm
 
 
 def getHtml(url):
+    #获得网址源代码
     headers = {
         "User-Agent": "User-Agent:Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0;"}
     page = requests.get(url, headers=headers)
@@ -94,6 +95,7 @@ def getImg_jinshanmobile(html):
     result = re.sub('::after', '', result)
     return re.sub(r'<(.*?)>', '', result)
 '''
+#!TODO: 本来是想做一个手机版金山查询的，但是似乎出了一点问题，希望有大佬修复一下
 
 def getImg(html, choice):
     if(choice == 1):
@@ -101,10 +103,10 @@ def getImg(html, choice):
     if(choice ==2):
         return getImg_jinshan(html)
     else:
-        return getImg_jinshanmobile
+        return getImg_jinshanmobile(html)
 
 
-def url(choice):
+def url(choice):#选择翻译网站
     if(choice == 1):
         return "http://dict.youdao.com/w/eng/"
     if(choice==2):
@@ -113,14 +115,16 @@ def url(choice):
         return "https://m.iciba.com/"
 
 
-class Application(Frame):
+class Application(Frame):#图形化界面
     w=500
     def __init__(self, master=None):
         Frame.__init__(self, master)
         self.pack()
         self.createWidgets()
 
-    def createWidgets(self):
+    def createWidgets(self):#图形化界面布局
+        
+        #文件路径的选择：
         self.path_var = "文件路径"
         self.xx = StringVar()
         self.result = StringVar()
@@ -137,11 +141,13 @@ class Application(Frame):
         self.save.insert(0, self.path_var)
         Button(self, text="选择要翻\n译的文件", command=self.callback).grid(
             row=0, column=2, rowspan=2, sticky="n" + "s" + "w" + "e")
+        
+        #词典选择栏以及翻译（运行）按钮：
         Label(self, text="选 择\n你 的\n词 典").grid(row=2, sticky="w", rowspan=2)
         URL = [
             (" 有  道", 1),
             (" 金  山", 2)
-            #("金山手机版(弃用）",3)
+            #("金山手机版",3)
         ]
         size=2
         self.v = IntVar()
@@ -152,23 +158,26 @@ class Application(Frame):
         self.alertButton = Button(
             self, text='translate', command=self.translate)
         self.alertButton.grid(row=2, column=2,rowspan=size)
+        
+        #进度条：
         Label(self, text='进度:').grid(row=size+2)
         self.canvas = Canvas(self, width=self.w, height=22, bg="white")
         self.canvas.grid(row=size+2,column=1)
         Label(self, textvariable=self.xx).grid(row=size+2, column=2)
+        
+        #每个单词的查询结果：
         Label(self, textvariable=self.word).grid(row=size+3)
         Label(self, textvariable=self.result,
                 width=100).grid(row=size+3, column=1,columnspan=2)
     
     def change_schedule(self,now_schedule, all_schedule):
+        #进度百分比
         self.xx.set(str(round((now_schedule+1)/all_schedule*100,2)) + '%')
         if round((now_schedule+1)/all_schedule*100, 2) == 100.00:
             self.xx.set("完成")
 
-
     def callback(self):
         filetypes = [("文本文件", "*.txt")]  # 设置可以选择的文件类型，不属于这个类型的，无法被选中
-        # 打开桌面
         file_name = askopenfilename(
             title='选择单个文件', filetypes=filetypes, initialdir='C:/Users/cqc/Desktop/')
         self.path_var = file_name
@@ -179,6 +188,7 @@ class Application(Frame):
         self.save.insert(0, self.savepath_var)
 
     def translate(self):
+        #翻译主程序
         try:
             title = self.path_var
             title_save = self.save.get()
