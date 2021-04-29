@@ -19,7 +19,7 @@
 ## **测试文件**
 
 - txt文件可以用"sample.txt"进行测试
-- excel文件可以用"sample.xlsx"进行测试
+- excel文件可以用"sample（1）.xlsx"进行测试
 
 ## **无法解决的bug**
 
