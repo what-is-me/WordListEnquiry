@@ -18,7 +18,7 @@
 - 直接去Release下载，即https://github.com/what-is-me/wordlisttranslate/releases/
 - Windows64位用户（基本上内存大于4g的都是）下载1.0.exe即可运行
 - 其他系统用户直接下载源代码执行吧，顺便看看有没有bug
-  ps: 需要python环境，并`pip install openpyxl`,`pip install requests`
+- ps: 源代码运行需要python环境，并`pip install openpyxl`,`pip install requests`
 
 ## **查词网站的选择：**
 
