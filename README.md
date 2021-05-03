@@ -2,23 +2,24 @@
 
 一个简单的爬虫程序，用于批量查询单词，有图形界面。
 
-## **动机**
+## **动机：）**
 
 - 某天，英语老师课后发了个巨大的单词表，只有英文，没有中文解释
 - 这个时候我回想起某年暑假，做完老师布置的一本阅读，兴致冲冲准备做一个生词表，整了几天没整出来~~太枯燥了，反正我也不会背~~
 - 单词表整理出来，你不一定会背，但是不整理，一定不会去背，本项目旨在减少整理时间（你只要输入单词就行了）（虽然它挺慢，但也比你一个一个复制粘贴查询复制粘贴进表格快得多吧）
 
-## **目标用户**
+## **目标用户->**
 
 - 初中、高中生、考研党：你可以用它来大大减少你做完一组阅读理解后生词积累的查询时间（也更方便背诵），省下来的时间多做几道数学题不香吗[卷起来了]~~我当时要是有这玩意也不至于高考这么糟糕~~
 - 老师：用法与学生类似，~~虽然有的老师喜欢查纸质词典~~这个程序或许可以让你早睡一会儿
 
-## **下载**
+## **[下载](https://github.com/what-is-me/wordlisttranslate/releases/)**
 
-- 直接去Release下载，即https://github.com/what-is-me/wordlisttranslate/releases/
 - Windows64位用户（基本上内存大于4g的都是）下载1.0.exe即可运行
 - 其他系统用户直接下载源代码执行吧，顺便看看有没有bug
-- ps: 源代码运行需要python环境，并`pip install openpyxl`,`pip install requests`
+- ps: 源代码运行需要python环境，并安装两个库，在cmd/power shell里输入：
+  - `pip install openpyxl`
+  - `pip install requests`
 
 ## **查词网站的选择：**
 
@@ -32,7 +33,7 @@
 - txt必须每行一个单词/词组，每行多个单词会被视作词组
 - excel必须第一列是单词/词组，运行程序后第二列会生成解释，第三列及以后就随便你写什么了
 
-  excel第一列每一个单元格一个单词/词组，中间空行会出现错误
+  excel第一列每一个单元格一个单词/词组，中间空行会出现错误（大概有？我没测试过）
 
 ## **测试文件**
 
@@ -41,7 +42,7 @@
 
 ## **无法解决的bug**
 
-- 查询特定单词时，会导致崩溃，这与网页有关（目前只在有道遇到过）（这个单词本身也比较生僻~~居然是个学术英语词汇呢~~）
+- 查询特定单词时，会导致崩溃，这与网页有关（目前只在**有道**遇到过）（这个单词本身也比较生僻~~居然是个比较常用的学术英语词汇呢~~）（好像是个p开头的）
 
 ## **相关规定**
 
@@ -49,29 +50,25 @@
 - 查询源分别为：
 
 
-| 源 | 网站 | 爬虫协议 |
-| :-: | :-: | :-: |
-| 有道 | http://dict.youdao.com/w/ | http://dict.youdao.com/robots.txt |
-| 金山 | https://www.iciba.com/word?w= | 无/未找到 |
-| bing | https://cn.bing.com/dict/search?q= | https://cn.bing.com/robots.txt |
-| 海词 | https://dict.cn/search?q= | https://dict.cn/robots.txt |
-
-## **参考**
-
-1. https://github.com/ztjryg4/QueryMoreWords 项目：
-  它已经很久很久没有更新了（17年老项目），只有有道一个源~~这个源已经很难很难搜索到了~~，大部分单词都无法查到，只能查询单词，无法查询词组。不仅如此，而且代码书写混乱，比如for循环里还有几个函数定义，一点注释也没有写。但是通过这份代码，我硬生生学了一部分python，也减轻了我很大一部分工作量~~或许没有它我连头都起不起来，但是改bug的时间绝对少很多~~。无论如何，我还是感谢它。~~我怀疑这作者也忘了他还有这个项目了，但希望他考上了心仪的大学~~
-  有道、金山的html处理函数大多参考此项目，海词的是我直接自己写的（莫名其妙地很快）
-  
-2. https://www.liaoxuefeng.com/wiki/1016959663602400/1017786914566560 ：
-  我为什么使用tkinter而不是HTML或者qt做界面？因为我不会呀[笑哭]。我看的这几个教程都是讲tkinter的，它简单，只是略丑。
+|  源  |                网站                |             爬虫协议             |
+| :----: | :----------------------------------: | :---------------------------------: |
+| 有道 |     http://dict.youdao.com/w/     | http://dict.youdao.com/robots.txt |
+| 金山 |   https://www.iciba.com/word?w=   |             无/未找到             |
+| bing | https://cn.bing.com/dict/search?q= |  https://cn.bing.com/robots.txt  |
+| 海词 |     https://dict.cn/search?q=     |    https://dict.cn/robots.txt    |
 
 ## **代码规范**
 
 - 我自己的的代码就很丑了，也不强求，毕竟txt和excel的读写不一样，每个网页html也不同。
-- 最好用函数
+- 希望后继者多多使用函数/类。
 
 ## **关于贡献**
 
 - 能精简代码，规范代码，提速的最好
-- 增加查询源的需要修改`class getimg`,`def url(choice):`,`phrase(choice, word):`,`def unfind(choice):`,`class Application(Frame) : createWidgets(self): size , URL`
-- 增加本地查询源的自己想办法
+- 增加查询源的需要修改
+  - `class getimg`：网页html的处理
+  - `url(choice)`：增添一个网址
+  - `phrase(choice, word)`：增添其词组中空格的替换
+  - `def unfind(choice)`：增添其查询不到单词的返回结果
+  - `class Application(Frame) : createWidgets(self): size , URL`：size++，URL列表里再添一个
+- 增加本地查询源的可能要修改得更多
