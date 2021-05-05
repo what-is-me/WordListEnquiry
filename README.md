@@ -72,3 +72,6 @@
   - `def unfind(choice)`：增添其查询不到单词的返回结果
   - `class Application(Frame) : createWidgets(self): size , URL`：size++，URL列表里再添一个
 - 增加本地查询源的可能要修改得更多
+
+## 版本更新：
+1.1 如果短语无法查询到结果，且在第二列有值，则不会替换为翻译函数
