@@ -20,7 +20,7 @@
 - ps: 源代码运行需要python环境，并安装两个库，在cmd/power shell里输入：
   - `pip install openpyxl`
   - `pip install requests`
-- 后续版本可能会直接放在main分支，直接下载对应exe即可
+- 后续版本放gitee了，GitHub老掉线
 
 ## **查词网站的选择：**
 
@@ -76,4 +76,4 @@
 
 ## 版本更新：
 代码肯定是最新版本的
-1.1 如果短语无法查询到结果，且在第二列有值，则不会替换为翻译函数
+- v1.1 如果短语无法查询到结果，且在第二列有值，则不会替换为翻译函数 [v1.1download](https://gitee.com/whatisme/wordlisttranslate/releases/v1.1)
