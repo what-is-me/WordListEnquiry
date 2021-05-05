@@ -13,13 +13,14 @@
 - 初中、高中生、考研党：你可以用它来大大减少你做完一组阅读理解后生词积累的查询时间（也更方便背诵），省下来的时间多做几道数学题不香吗[卷起来了]~~我当时要是有这玩意也不至于高考这么糟糕~~
 - 老师：用法与学生类似，~~虽然有的老师喜欢查纸质词典~~这个程序或许可以让你早睡一会儿
 
-## **[下载](https://github.com/what-is-me/wordlisttranslate/releases/)**
+## **[下载](https://github.com/what-is-me/wordlisttranslate/releases/)**(v1.0)
 
 - Windows64位用户（基本上内存大于4g的都是）下载1.0.exe即可运行
 - 其他系统用户直接下载源代码执行吧，顺便看看有没有bug
 - ps: 源代码运行需要python环境，并安装两个库，在cmd/power shell里输入：
   - `pip install openpyxl`
   - `pip install requests`
+- 后续版本可能会直接放在main分支，直接下载对应exe即可
 
 ## **查词网站的选择：**
 
