@@ -330,12 +330,14 @@ class Application(Frame):
                     html = getHtml(url(choice)+phrase(choice, word))
                     ret = getImg(html, choice)
                     ret = re.sub(word, '', ret)
-                    if ret == unfind(choice):
-                        ret = '=IFERROR(FILTERXML(WEBSERVICE("http://fanyi.youdao.com/translate?&i="&A'+str(
-                            cnt+1)+'&"&doctype=xml&version"),"//translation"),"")'
-                        # 如果无法搜索到，则使用有道翻译
                     maxofret = max(maxofret, len(ret))
-                    ws['b'+str(cnt+1)].value = ret
+                    if ret == unfind(choice):
+                        if(ws['b'+str(cnt+1)].value == ""):
+                            ws['b'+str(cnt+1)].value = '=IFERROR(FILTERXML(WEBSERVICE("http://fanyi.youdao.com/translate?&i="&A'+str(
+                                cnt+1)+'&"&doctype=xml&version"),"//translation"),"")'
+                        # 如果无法搜索到，则使用有道翻译
+                    else:
+                        ws['b'+str(cnt+1)].value = ret
                     self.word.set(word+":")
                     self.result.set(ret)
                     self.change_schedule(cnt, n)
