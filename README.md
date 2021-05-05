@@ -76,6 +76,6 @@ ps：代码肯定是最新版本的
   - `pip install openpyxl`
   - `pip install requests`
 
-### [[v1.1 download]](https://gitee.com/whatisme/wordlisttranslate/releases/v1.1)
+### [[v1.1]](https://gitee.com/whatisme/wordlisttranslate/releases/v1.1)
 - 后续版本放gitee了，GitHub老掉线
 - 如果短语无法查询到结果，且在第二列有值，则不会替换为翻译函数 
