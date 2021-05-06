@@ -67,15 +67,15 @@
   - `class Application(Frame) : createWidgets(self): size , URL`：size++，URL列表里再添一个
 - 增加本地查询源的可能要修改得更多
 
-## 版本更新：
+## 版本更新：[download](https://github.com/what-is-me/wordlisttranslate/releases/)
 ps：代码肯定是最新版本的
-### [[v1.0]](https://github.com/what-is-me/wordlisttranslate/releases/)
+### [v1.0]
 - Windows64位用户（基本上内存大于4g的都是）下载1.0.exe即可运行
 - 其他系统用户直接下载源代码执行吧，顺便看看有没有bug
 - ps: 源代码运行需要python环境，并安装两个库，在cmd/power shell里输入：
   - `pip install openpyxl`
   - `pip install requests`
 
-### [[v1.1]](https://gitee.com/whatisme/wordlisttranslate/releases/v1.1)
-- 后续版本放gitee了，GitHub老掉线
+### [v1.1]
+- [[v1.1 download from gitee]](https://gitee.com/whatisme/wordlisttranslate/releases/v1.1)
 - 如果短语无法查询到结果，且在第二列有值，则不会替换为翻译函数 
