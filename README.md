@@ -1,7 +1,8 @@
 # ~~英语~~外语单词批量查询软件
 [![](https://img.shields.io/github/stars/what-is-me/WordListEnquiry.svg?style=flat-square&logo=github&logoWidth=20&label=Star)](https://github.com/what-is-me/WordListEnquiry/stargazers)
 
-一个简单的爬虫程序，用于批量查询~~英语~~外语单词，有图形界面。
+一个简单的爬虫程序，用于批量查询~~英语~~外语单词，有图形界面。<br>
+希望有一颗小星星鼓励一下⭐<br>
 有参考17年停更的项目[QueryMoreWords](https://github.com/ztjryg4/QueryMoreWords)~~完全无法使用，我甚至被迫学了python~~
 
 ## 介绍
