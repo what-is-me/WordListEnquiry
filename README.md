@@ -1,7 +1,7 @@
-# 英语单词批量查询软件
+# ~~英语~~外语单词批量查询软件
 [![](https://img.shields.io/github/stars/what-is-me/wordlisttranslate.svg?style=flat-square&logo=github&logoWidth=20&label=Star)](https://github.com/what-is-me/wordlisttranslate/stargazers)
 
-一个简单的爬虫程序，用于批量查询单词，有图形界面。
+一个简单的爬虫程序，用于批量查询~~英语~~外语单词，有图形界面。
 
 ## 介绍
 
@@ -15,6 +15,7 @@
 
 - 初中、高中生、考研党：你可以用它来大大减少你做完一组阅读理解后生词积累的查询时间（也更方便背诵），省下来的时间多做几道数学题不香吗[卷起来了]~~我当时要是有这玩意也不至于高考这么糟糕~~
 - 老师：用法与学生类似，~~虽然有的老师喜欢查纸质词典~~这个程序或许可以让你早睡一会儿
+- 小语种学员（法/日）：纯单词（无解释）考试大纲的
 
 ### **查词网站的选择：**
 
@@ -70,13 +71,20 @@
 
 ## 版本更新：[download](https://github.com/what-is-me/wordlisttranslate/releases/)
 ps：代码肯定是最新版本的
-### [v1.0]
+### [v1.0] 基础版本
 - Windows64位用户（基本上内存大于4g的都是）下载1.0.exe即可运行
 - 其他系统用户直接下载源代码执行吧，顺便看看有没有bug
 - ps: 源代码运行需要python环境，并安装两个库，在cmd/power shell里输入：
   - `pip install openpyxl`
   - `pip install requests`
 
-### [v1.1]
+### [v1.1] 更加人性化的少量修改
 - [[v1.1 download from gitee]](https://gitee.com/whatisme/wordlisttranslate/releases/v1.1)
-- 如果短语无法查询到结果，且在第二列有值，则不会替换为翻译函数 
+- 更新内容：~~如果短语无法查询到结果，则**全部**替换为翻译函数~~如果短语无法查询到结果，且在第二列有值，则不会替换为翻译函数 
+
+### [v1.2] 走向多语言
+- 更新内容：
+  - ~~英语单词批量查询软件~~外语单词批量查询软件
+  - 增添了有道法语/日语查询源
+  - ！！！日语请全部使用假名（平/片均可），含有汉字会无法查出
+
