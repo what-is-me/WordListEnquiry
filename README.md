@@ -2,13 +2,14 @@
 [![](https://img.shields.io/github/stars/what-is-me/WordListEnquiry.svg?style=flat-square&logo=github&logoWidth=20&label=Star)](https://github.com/what-is-me/WordListEnquiry/stargazers)
 
 一个简单的爬虫程序，用于批量查询~~英语~~外语单词，有图形界面。
+有参考17年停更的项目[QueryMoreWords](https://github.com/ztjryg4/QueryMoreWords)~~完全无法使用，我甚至被迫学了python~~
 
 ## 介绍
 
 ### **动机**
 
-- 某天，英语老师课后发了个巨大的单词表，只有英文，没有中文解释
-- 这个时候我回想起某年暑假，做完老师布置的一本阅读，兴致冲冲准备做一个生词表，整了几天没整出来~~太枯燥了，反正我也不会背~~
+- 某年暑假，做完老师布置的一本阅读理解，准备做一个生词表，整了几天没整出来~~太枯燥了，而且估计反正我也不会背~~
+- 大部分重复操作可以靠编程解决
 - 单词表整理出来，你不一定会背，但是不整理，一定不会去背，本项目旨在减少整理时间（你只要输入单词就行了）（虽然它挺慢，但也比你一个一个复制粘贴查询复制粘贴进表格快得多吧）
 
 ### **目标用户**
