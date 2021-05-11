@@ -1,11 +1,11 @@
 # ~~英语~~外语单词批量查询软件
-[![](https://img.shields.io/github/stars/what-is-me/wordlisttranslate.svg?style=flat-square&logo=github&logoWidth=20&label=Star)](https://github.com/what-is-me/wordlisttranslate/stargazers)
+[![](https://img.shields.io/github/stars/what-is-me/WordListEnquiry.svg?style=flat-square&logo=github&logoWidth=20&label=Star)](https://github.com/what-is-me/WordListEnquiry/stargazers)
 
 一个简单的爬虫程序，用于批量查询~~英语~~外语单词，有图形界面。
 
 ## 介绍
 
-### **动机：）**
+### **动机**
 
 - 某天，英语老师课后发了个巨大的单词表，只有英文，没有中文解释
 - 这个时候我回想起某年暑假，做完老师布置的一本阅读，兴致冲冲准备做一个生词表，整了几天没整出来~~太枯燥了，反正我也不会背~~
@@ -22,6 +22,7 @@
 - 金山有时候会维护，无法使用
 - 海词查询速度**最快**
 - 当查询不到意思时，excel文件的输出会用有道翻译函数替代
+- 非英语目前只有有道源
 
 ### **文件格式**
 
@@ -38,7 +39,8 @@
 
 ### **无法解决的bug**
 
-- 查询特定单词时，会导致崩溃，这与网页有关（目前只在**有道**遇到过）（这个单词本身也比较生僻~~居然是个比较常用的学术英语词汇呢~~）（好像是个p开头的）
+- [en]查询特定单词时，会导致崩溃，这与网页有关（目前只在**有道**遇到过）（这个单词本身也比较生僻~~居然是个比较常用的学术英语词汇呢~~）（好像是个p开头的）
+- [jp]含有汉字大概率查不出，直接转换成假名再查
 
 ### **相关规定**
 
@@ -82,7 +84,7 @@ ps：代码肯定是最新版本的
 - [[v1.1 download from gitee]](https://gitee.com/whatisme/wordlisttranslate/releases/v1.1)
 - 更新内容：~~如果短语无法查询到结果，则**全部**替换为翻译函数~~如果短语无法查询到结果，且在第二列有值，则不会替换为翻译函数 
 
-### [v1.2] 走向多语言
+### [v1.2] 仅英语->多语言
 - 更新内容：
   - ~~英语单词批量查询软件~~外语单词批量查询软件
   - 增添了有道法语/日语查询源
