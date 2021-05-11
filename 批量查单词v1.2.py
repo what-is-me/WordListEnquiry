@@ -4,7 +4,7 @@
 #     @LastEditors:    what-is-me
 #     @LastEditTime:   2021-04-29 19:00:40
 #     @Description:    一个简单的爬虫程序，用于批量查询单词，有图形界面。v1.2
-#     @Address:        https://github.com/what-is-me/wordlisttranslate/
+#     @Address:        https://github.com/what-is-me/WordListEnquiry/
 # =======================================================================
 
 
