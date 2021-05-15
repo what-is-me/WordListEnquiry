@@ -65,19 +65,19 @@
 </table>
 ## 下载：[download](https://github.com/what-is-me/wordlisttranslate/releases/)
 ## 各版本更新情况：
-### [v1.0]
+### [v1.0](https://github.com/what-is-me/WordListEnquiry/releases/tag/1.0)
 - 拥有`有道`,`金山`,`bing`,`海词`四个英语单词查询源。
 
-### [v1.1]
+### [v1.1](https://github.com/what-is-me/WordListEnquiry/releases/tag/1.1)
 - [[v1.1 download from gitee]](https://gitee.com/whatisme/wordlisttranslate/releases/v1.1)
 - 更新内容：
   - ~~如果短语无法查询到结果，则**全部**替换为翻译函数~~如果短语无法查询到结果，且在第二列有内容，则不会替换为翻译函数 。
 
-### [v1.2]
+### [v1.2](https://github.com/what-is-me/WordListEnquiry/releases/tag/1.2)
 - 更新内容：
   - 增添了有道法语/日语查询源（有道）。
   - 日语请全部使用假名（平/片均可），含有汉字会无法查出。
 
-### [v1.3]
+### [v1.3](https://github.com/what-is-me/WordListEnquiry/releases/tag/1.3)
 - 更新内容：
   - 增加了德语（仅限单词）（德语助手）
