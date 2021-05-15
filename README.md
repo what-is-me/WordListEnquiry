@@ -76,25 +76,25 @@
 
 ## 版本更新：[download](https://github.com/what-is-me/wordlisttranslate/releases/)
 ps：代码肯定是最新版本的
-### [v1.0] 基础版本
+### [v1.0](https://github.com/what-is-me/WordListEnquiry/releases/tag/1.0)
 - Windows64位用户（基本上内存大于4g的都是）下载1.0.exe即可运行
 - 其他系统用户直接下载源代码执行吧，顺便看看有没有bug
 - ps: 源代码运行需要python环境，并安装两个库，在cmd/power shell里输入：
   - `pip install openpyxl`
   - `pip install requests`
 
-### [v1.1]
+### [v1.1](https://github.com/what-is-me/WordListEnquiry/releases/tag/1.1)
 - [[v1.1 download from gitee]](https://gitee.com/whatisme/wordlisttranslate/releases/v1.1)
 - 更新内容：~~如果短语无法查询到结果，则**全部**替换为翻译函数~~如果短语无法查询到结果，且在第二列有值，则不会替换为翻译函数 
 
-### [v1.2]
+### [v1.2](https://github.com/what-is-me/WordListEnquiry/releases/tag/1.2)
 - 更新内容：
   - ~~英语单词批量查询软件~~外语单词批量查询软件
   - 增添了有道法语/日语查询源
   - ！！！日语请全部使用假名（平/片均可），含有汉字会无法查出
   - 毕竟本人不学小语种，所以小语种可能有更多bug，请自行调源代码/issues
 
-### [v1.3]
+### [v1.3](https://github.com/what-is-me/WordListEnquiry/releases/tag/1.3)
 - 更新内容：
   - 增加了德语（仅限单词）
   - 有道词典没有德语真的是。。。
