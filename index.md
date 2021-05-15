@@ -63,8 +63,11 @@
       <td style='text-align:center;' >不支持词组</td>
     </tr>
 </table>
+
 ## 下载：[download](https://github.com/what-is-me/wordlisttranslate/releases/)
+
 ## 各版本更新情况：
+
 ### [v1.0](https://github.com/what-is-me/WordListEnquiry/releases/tag/1.0)
 - 拥有`有道`,`金山`,`bing`,`海词`四个英语单词查询源。
 
