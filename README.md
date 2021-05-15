@@ -1,4 +1,4 @@
-# ~~英语~~外语单词批量查询软件
+# ~~英语~~外语单词批量查询软件[[主页]](https://what-is-me.github.io/WordListEnquiry/)
 <a href="https://github.com/what-is-me/WordListEnquiry/stargazers"><img alt="GitHub issues" src="https://img.shields.io/github/stars/what-is-me/WordListEnquiry"></a>
 <a href="https://github.com/what-is-me/WordListEnquiry/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/what-is-me/WordListEnquiry"></a>
 <a href="https://github.com/what-is-me/WordListEnquiry/network"><img alt="GitHub forks" src="https://img.shields.io/github/forks/what-is-me/WordListEnquiry"></a>
