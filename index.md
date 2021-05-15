@@ -26,16 +26,49 @@
 
 - 必须是`xxx.txt`/`xxx.xlsx`
 - 文档格式要求：<br>
-|                 | txt                | xlsx                                       |
-| --------------- | ------------------ | ------------------------------------------ |
-| 单词/词组放在哪 | 每行一个，可以空行 | A列，从第1行开始，每个单元格一个，不要空行 |
+<table>
+  <thead>
+    <tr>
+      <th style='text-align:center;' >&nbsp;</th>
+      <th style='text-align:center;' >txt</th>
+      <th style='text-align:center;' >xlsx</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style='text-align:center;' >单词/词组放在哪</td>
+      <td style='text-align:center;' >每行一个，可以空行</td>
+      <td style='text-align:center;' >A列，从第1行开始，每个单元格一个，不要空行</td>
+    </tr>
+  </tbody>
+</table>
 - 各语言情况：<br>
-|语言 |  |
-|:-:|:-:|
-|英语 |支持词组 |
-|日语 |仅支持假名  | 
-|法语 |支持词组 |
-|德语 |不支持词组  |
+<table>
+  <thead>
+    <tr>
+      <th style='text-align:center;' >语言</th>
+      <th style='text-align:center;' >&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style='text-align:center;' >英语</td>
+      <td style='text-align:center;' >支持词组</td>
+    </tr>
+    <tr>
+      <td style='text-align:center;' >日语</td>
+      <td style='text-align:center;' >仅支持假名</td>
+    </tr>
+    <tr>
+      <td style='text-align:center;' >法语</td>
+      <td style='text-align:center;' >支持词组</td>
+    </tr>
+    <tr>
+      <td style='text-align:center;' >德语</td>
+      <td style='text-align:center;' >不支持词组</td>
+    </tr>
+  </tbody>
+</table>
 
 ## 下载：[download](https://github.com/what-is-me/wordlisttranslate/releases/)
 ## 各版本更新情况：
