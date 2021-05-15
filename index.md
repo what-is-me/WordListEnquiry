@@ -30,14 +30,16 @@
   <thead>
     <tr>
       <th style='text-align:center;' >&nbsp;</th>
-      <th style='text-align:center;' >txt</th>
-      <th style='text-align:center;' >xlsx</th>
+      <th style='text-align:center;' >单词/词组放在哪</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style='text-align:center;' >单词/词组放在哪</td>
+      <td style='text-align:center;' >"xxx.txt"</td>
       <td style='text-align:center;' >每行一个，可以空行</td>
+    </tr>
+    <tr>
+      <td style='text-align:center;' >"xxx.xlsx"</td>
       <td style='text-align:center;' >A列，从第1行开始，每个单元格一个，不要空行</td>
     </tr>
   </tbody>
@@ -47,7 +49,7 @@
   <thead>
     <tr>
       <th style='text-align:center;' >语言</th>
-      <th style='text-align:center;' >&nbsp;</th>
+      <th style='text-align:center;' >支持</th>
     </tr>
   </thead>
   <tbody>
