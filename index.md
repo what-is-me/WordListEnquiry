@@ -8,7 +8,7 @@
 ## **为谁准备的**（目标用户）
 
 - 初中、高中生、考研党、老师：在做完一批外文阅读后，你记录下了一批生词，准备自己背诵/做成ppt讲解。这时你决定：
-  1. 使用有道/欧路/金山一个一个查，并在`Ctrl+C`，`Ctrl+V`的帮助下做成《单词|解释》表格。
+  1. 使用有道/欧路/金山一个一个查，并在`Ctrl+C`，`Ctrl+V`的帮助下做成《单词-解释》表格。
   2. 使用本软件简化上述步骤。
 - 小语种学员（法/日）：你有一份纯单词的（无解释）考试大纲，准备在考前背诵。这时你打算：
   1. 在百度文库上下载~~排版可能不符合你心意的~~付费的别人做好的表格。
@@ -26,7 +26,7 @@
 
 - 必须是`xxx.txt`/`xxx.xlsx`
 - 文档格式要求：<br>
-<table border="1" width="500">
+<table>
     <tr>
       <td style='text-align:center;' >&nbsp;</th>
       <td style='text-align:center;' >单词/词组放在哪</th>
@@ -41,7 +41,7 @@
     </tr>
 </table>
 - 各语言情况：<br>
-<table border="1" width="500">
+<table>
     <tr>
       <td style='text-align:center;' >语言</th>
       <td style='text-align:center;' >支持</th>
