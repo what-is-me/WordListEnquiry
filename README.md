@@ -1,8 +1,6 @@
 # ~~英语~~外语单词批量查询软件
-
-[![](https://img.shields.io/github/stars/what-is-me/wordlisttranslate.svg?style=flat-square&logo=github&logoWidth=20&label=Star)](https://github.com/what-is-me/WordListEnquiry/stargazers)
+<a href="https://github.com/what-is-me/WordListEnquiry/stargazers"><img alt="GitHub issues" src="https://img.shields.io/github/stars/what-is-me/WordListEnquiry"></a>
 <a href="https://github.com/what-is-me/WordListEnquiry/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/what-is-me/WordListEnquiry"></a>
-
 <a href="https://github.com/what-is-me/WordListEnquiry/network"><img alt="GitHub forks" src="https://img.shields.io/github/forks/what-is-me/WordListEnquiry"></a>
 <br>
 一个简单的爬虫程序，用于批量查询~~英语~~外语单词，有图形界面。<br>
