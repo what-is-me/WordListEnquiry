@@ -1,37 +1,57 @@
-## Welcome to GitHub Pages
+# 外语单词批量查询软件
 
-You can use the [editor on GitHub](https://github.com/what-is-me/WordListEnquiry/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+这是一个简单的爬虫程序，用于批量查询外语（不只有英语哦）单词。<br>
+我为它做了有图形界面，以方便教师和学生使用。<br>
+希望有一颗小星星鼓励一下⭐<br>
+参考于17年停更的老项目[QueryMoreWords](https://github.com/ztjryg4/QueryMoreWords)
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## **为谁准备的**（目标用户）
 
-### Markdown
+- 初中、高中生、考研党、老师：在做完一批外文阅读后，你记录下了一批生词，准备自己背诵/做成ppt讲解。这时你决定：
+  1. 使用有道/欧路/金山一个一个查，并在`Ctrl+C`，`Ctrl+V`的帮助下做成《单词|解释》表格。
+  2. 使用本软件简化上述步骤。
+- 小语种学员（法/日）：你有一份纯单词的（无解释）考试大纲，准备在考前背诵。这时你打算：
+  1. 在百度文库上下载~~排版可能不符合你心意的~~付费的别人做好的表格。
+  2. 使用本软件**免费**制作带解释的考试大纲。
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+## **查词源的选择**
 
-```markdown
-Syntax highlighted code block
+- **金山**有时候会维护，无法使用
+- **海词**查询速度**最快**
+- **法语、日语**目前只有有道源
+- **德语**目前只有德语助手这个源
+- 某些源查特定单词会崩溃，是网页问题
 
-# Header 1
-## Header 2
-### Header 3
+### **被查询的单词列表文件格式**
 
-- Bulleted
-- List
+- 必须是`xxx.txt`/`xxx.xlsx`
+- 文档格式要求：
+||txt|xlsx|
+|:---:|:---:|:---:|
+|单词/词组放在哪|每行一个，可以空行|A列，从第1行开始，每个单元格一个，不要空行|
+- 各语言情况：
+|语言||
+|:---:|:---:|
+|英语|支持词组|
+|日语|仅支持假名|
+|法语|支持词组|
+|德语|不支持词组|
 
-1. Numbered
-2. List
+## 下载：[download](https://github.com/what-is-me/wordlisttranslate/releases/)
+## 各版本更新情况：
+### [v1.0]
+- 拥有`有道`,`金山`,`bing`,`海词`四个英语单词查询源。
 
-**Bold** and _Italic_ and `Code` text
+### [v1.1]
+- [[v1.1 download from gitee]](https://gitee.com/whatisme/wordlisttranslate/releases/v1.1)
+- 更新内容：
+  - ~~如果短语无法查询到结果，则**全部**替换为翻译函数~~如果短语无法查询到结果，且在第二列有内容，则不会替换为翻译函数 。
 
-[Link](url) and ![Image](src)
-```
+### [v1.2]
+- 更新内容：
+  - 增添了有道法语/日语查询源（有道）。
+  - 日语请全部使用假名（平/片均可），含有汉字会无法查出。
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/what-is-me/WordListEnquiry/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+### [v1.3]
+- 更新内容：
+  - 增加了德语（仅限单词）（德语助手）
