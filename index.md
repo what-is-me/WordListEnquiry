@@ -26,14 +26,11 @@
 
 - 必须是`xxx.txt`/`xxx.xlsx`
 - 文档格式要求：<br>
-<table width="400">
-  <thead>
+<table border="1" width="500">
     <tr>
-      <th style='text-align:center;' >&nbsp;</th>
-      <th style='text-align:center;' >单词/词组放在哪</th>
+      <td style='text-align:center;' >&nbsp;</th>
+      <td style='text-align:center;' >单词/词组放在哪</th>
     </tr>
-  </thead>
-  <tbody>
     <tr>
       <td style='text-align:center;' >"xxx.txt"</td>
       <td style='text-align:center;' >每行一个，可以空行</td>
@@ -42,17 +39,13 @@
       <td style='text-align:center;' >"xxx.xlsx"</td>
       <td style='text-align:center;' >A列，从第1行开始，每个单元格一个，不要空行</td>
     </tr>
-  </tbody>
 </table>
 - 各语言情况：<br>
-<table width="400">
-  <thead>
+<table border="1" width="500">
     <tr>
-      <th style='text-align:center;' >语言</th>
-      <th style='text-align:center;' >支持</th>
+      <td style='text-align:center;' >语言</th>
+      <td style='text-align:center;' >支持</th>
     </tr>
-  </thead>
-  <tbody>
     <tr>
       <td style='text-align:center;' >英语</td>
       <td style='text-align:center;' >支持词组</td>
@@ -69,7 +62,6 @@
       <td style='text-align:center;' >德语</td>
       <td style='text-align:center;' >不支持词组</td>
     </tr>
-  </tbody>
 </table>
 
 ## 下载：[download](https://github.com/what-is-me/wordlisttranslate/releases/)
