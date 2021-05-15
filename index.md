@@ -26,7 +26,7 @@
 
 - 必须是`xxx.txt`/`xxx.xlsx`
 - 文档格式要求：<br>
-<table>
+<table width="400">
   <thead>
     <tr>
       <th style='text-align:center;' >&nbsp;</th>
@@ -45,7 +45,7 @@
   </tbody>
 </table>
 - 各语言情况：<br>
-<table>
+<table width="400">
   <thead>
     <tr>
       <th style='text-align:center;' >语言</th>
