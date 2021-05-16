@@ -1,309 +1,752 @@
 <!doctype html>
 <html>
-
 <head>
-    <meta charset='UTF-8'>
-    <meta name='viewport' content='width=device-width initial-scale=1'>
-    <title>外语单词批量查询软件</title>
-    <style>
-        a:link {
-            font-family: 'Times New Roman', Times, serif;
-            color: black;
-            text-decoration: none;
-        }
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
 
-        a:visited {
-            font-family: 'Times New Roman', Times, serif;
-            color: black;
-            text-decoration: none;
-        }
+<style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
+.mac-os-11 { --title-bar-height:28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.md-inline-math .MathJax_SVG .noError { display: none !important; }
+.html-for-mac .inline-math-svg .MathJax_SVG { vertical-align: 0.2px; }
+.md-fences-math .MathJax_SVG_Display, .md-math-block .MathJax_SVG_Display { text-align: center; margin: 0px; position: relative; text-indent: 0px; max-width: none; max-height: none; min-height: 0px; min-width: 100%; width: auto; overflow-y: visible; display: block !important; }
+.MathJax_SVG_Display, .md-inline-math .MathJax_SVG_Display { width: auto; margin: inherit; display: inline-block !important; }
+.MathJax_SVG .MJX-monospace { font-family: var(--monospace); }
+.MathJax_SVG .MJX-sans-serif { font-family: sans-serif; }
+.MathJax_SVG { display: inline; font-style: normal; font-weight: 400; line-height: normal; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; overflow-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; zoom: 90%; }
+#math-inline-preview-content { zoom: 1.1; }
+.MathJax_SVG * { transition: none 0s ease 0s; }
+.MathJax_SVG_Display svg { vertical-align: middle !important; margin-bottom: 0px !important; margin-top: 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-require-zoom-fix foreignobject { font-size: var(--mermaid-font-zoom); }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-math .MathJax_SVG_Display { margin-top: 8px; cursor: default; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex:2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
 
-        a:hover {
-            font-family: 'Times New Roman', Times, serif;
-            color: red;
-            text-decoration: underline;
-        }
 
-        a:active {
-            font-family: 'Times New Roman', Times, serif;
-            text-decoration: underline;
-        }
 
-        a.o:link {
-            font-style: italic;
-            color: gray;
-            text-decoration: none;
-        }
 
-        a.o:visited {
-            font-style: italic;
-            color: gray;
-            text-decoration: none;
-        }
+/* techo-typora style */
+:root {
+    --active-file-bg-color: #dadada;
+    --active-file-bg-color: rgba(32, 43, 51, 0.63);
+    --active-file-text-color: white;
+    --bg-color: #f9f5ed;
+    --text-color: #6e4832;
+    --side-bar-bg-color: #f5f5f5;
+    --control-text-color: #666;
+    --primary-color: #6e4832;
+}
 
-        a.o:hover {
-            font-style: italic;
-            color: black;
-            text-decoration: underline;
-        }
+html {
+    color: #6e4832;
+    background: #f9f5ed;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-rendering: optimizelegibility;
+    font-size: 16px;
+    -webkit-font-smoothing: initial;
+}
 
-        a.o:active {
-            font-style: italic;
-            text-decoration: underline;
-        }
+content {
+    background: #f9f5ed;
+}
 
-        ul.x {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            width: 15%;
-            background-color: rgba(255, 255, 255, 0.8);
-            height: 100%;
-            /* 全高 */
-            position: fixed;
-            /* 使它产生粘性，即使在滚动时 */
-            overflow: auto;
-            /* 如果侧栏的内容太多，则启用滚动条 */
-        }
+/* input mode  */
+#write {
+    max-width: 960px;
+    padding-top: 2em;
+    padding-left: 60px;
+    padding-right: 60px;
+    min-height: calc(100vh - 6em);
+    -webkit-font-smoothing: antialiased;
+    font-size: 16px;
+}
 
-        li a {
-            display: block;
-            color: #000;
-            padding: 8px 16px;
-            text-decoration: none;
-        }
+.typora-node #write {
+    min-height: calc(100% - 6em);
+}
 
-        /* 鼠标悬停时改变链接颜色 */
-        li a:hover {
-            background-color: #555;
-            color: white;
-        }
+/* meta - message - block */
+pre.md-meta-block {
+    color: rgba(146, 115, 91, 0.81);
+    padding: 1em;
+    border-radius: 2px;
+    font-size: 14px;
+    background: rgba(251, 246, 222, 0.5);
+}
 
-        .active {
-            background-color: #4CAF50;
-            color: white;
-        }
+@media screen and (max-width: 800px) {
+    html {
+        font-size: 14px;
+    }
 
-        #customers {
-            font-family: Arial, Helvetica, sans-serif;
-            border-collapse: collapse;
-            width: 100%;
-        }
+    #write {
+        padding-left: 30px;
+        background: #f9f5ed;
+        padding-right: 30px;
+        font-size: 14px;
+    }
+}
 
-        #customers td,
-        #customers th {
-            border: 1px solid white;
-            padding: 8px;
-        }
+@media screen and (min-width: 1100px) {
+    body, #footer-word-count-info {
+        background: #f5f5f5;
+    }
 
-        #customers tr:nth-child(odd) {
-            background-color: white;
-        }
+    body.pin-outline,
+    .pin-outline #footer-word-count-info,
+    .pin-outline footer {
+        background: #f9f5ed;
+    }
 
-        #customers tr:nth-child(even) {
-            background-color: lightgrey;
-        }
+    #write {
+        max-width: 1000px;
+        padding: 40px 60px;
+        background: #f9f5ed;
+        margin: 3em auto 3em;
+    }
 
-        #customers tr:hover {
-            background-color: none;
-        }
+    /* paper outline */
+    .pin-outline #write {
+        max-width: 1000px;
+        background: #f9f5ed;
+        margin: 0 0 0;
+        border: 0;
+        padding-left: 60px;
+        padding-right: 60px;
+    }
 
-        #customers th {
-            padding-top: 12px;
-            padding-bottom: 12px;
-            text-align: left;
-            background-color: gray;
-            color: white;
-        }
+    footer {
+        background-color: transparent;
+    }
+}
 
-        p.s {
-            font-family: "宋体", Serif;
-        }
+@media screen and (min-width: 1300px) {
+    body.pin-outline,
+    .pin-outline #footer-word-count-info,
+    .pin-outline footer {
+        background: #f9f5ed;
+    }
 
-        body {
-            align: center
-        }
+    .pin-outline #write {
+        max-width: 1000px;
+        padding: 40px 60px;
+        background: #f9f5ed;
+        margin: 3em auto 3em;
+    }
 
-        .div1 {
-            margin: 0 auto;
-            width: 1000px;
-            border: 1px solid black;
-            padding: 40px;
-            background-color: rgba(255, 255, 255, 0.8);
-        }
-    </style>
+    .pin-outline footer {
+        background-color: transparent;
+    }
+
+    #footer-word-count-info {
+        background: #f5f5f5;
+    }
+}
+
+/* clear margin and padding */
+body, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, hr, button, article, aside, details, figcaption, figure, footer, header, menu, nav, section {
+    margin: 0;
+    padding: 0;
+}
+
+article, aside, details, figcaption, figure, footer, header, menu, nav, section {
+    display: block;
+}
+
+audio, canvas, video {
+    display: inline-block;
+}
+
+body, button, input, select, textarea {
+    font: 400 1em/1.8 "font/han.otf", "PingFang SC", "Lantinghei SC", "Microsoft Yahei", "Hiragino Sans GB", "Microsoft Sans Serif", "WenQuanYi Micro Hei", sans;
+}
+
+body {
+    font-family: "font/han.otf", "PingFang SC", "Lantinghei SC", "Microsoft Yahei", "Hiragino Sans GB", "Microsoft Sans Serif", "WenQuanYi Micro Hei", sans;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "font/han.otf", "PingFang SC", "Lantinghei SC", "Microsoft Yahei", "Hiragino Sans GB", "Microsoft Sans Serif", "WenQuanYi Micro Hei", sans;
+    /*font-family: "PingFang SC", "Lantinghei SC", "Microsoft Yahei", "Hiragino Sans GB", "Microsoft Sans Serif", "WenQuanYi Micro Hei", sans;*/
+    -webkit-font-smoothing: initial;
+    font-weight: 100;
+    color: var(--text-color);
+    line-height: 1.35;
+    font-variant-numeric: lining-nums;
+    margin-bottom: 1em;
+}
+
+em {
+    font-family: "font/han.otf", Georgia-Italic, STSongti-SC-Light, serif;
+}
+
+strong em,
+em strong {
+    font-family: "font/han.otf", Georgia-BoldItalic, STSongti-SC-Regular, serif;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+fieldset, img {
+    border: 0;
+}
+
+/* img 添加边框 */
+img {
+    background: white;
+    border-radius: .2rem;
+    padding: 0.3rem;
+    box-shadow: 1px 2px 4px gray;
+    text-align: center;
+}
+
+blockquote {
+    position: relative;
+    color: rgba(146, 115, 91, 0.81);
+    font-weight: 400;
+    border-left: 2px solid #6e4832;
+    padding-left: 1rem;
+    margin: 1em 3em 1em 1em;
+}
+
+@media only screen and ( max-width: 640px ) {
+    blockquote {
+        margin: 1em 0;
+    }
+}
+
+acronym, abbr {
+    border-bottom: 1px dotted;
+    font-variant: normal;
+}
+
+abbr {
+    cursor: help;
+}
+
+address, caption, cite, code, dfn, th, var {
+    font-style: normal;
+    font-weight: 400;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+caption, th {
+    text-align: left;
+}
+
+q:before, q:after {
+    content: '';
+}
+
+sub, sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+}
+
+:root sub, :root sup {
+    vertical-align: baseline; /* for ie9 and other modern browsers */
+}
+
+sup {
+    top: -0.5em;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+/* a border bottom styles */
+a {
+    color: #4484c2;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+#write a {
+    font-weight: normal;
+}
+
+#write a:hover {
+    text-decoration: none;
+    border-bottom: 1px solid #4484c2;
+}
+
+ins, a {
+    text-decoration: none;
+}
+
+/* mark */
+mark {
+    background: #fffdd1;
+    border-bottom: 1px solid #ffedce;
+    padding: 2px;
+    margin: 0 5px;
+}
+
+pre, code, pre tt {
+    font-family: Courier, 'Courier New', monospace;
+}
+
+#write .md-fences {
+    border: 1px solid #ddd;
+    padding: 1em 0.5em;
+    display: block;
+    -webkit-overflow-scrolling: touch;
+}
+
+hr {
+    border: none;
+    border-bottom: 1px solid #cfcfcf;
+    margin-bottom: 0.8em;
+    height: 10px;
+}
+
+strong, b {
+    font-weight: 700;
+    /*color: #000;*/
+}
+
+/* 段落之间的间隔 */
+#write p, #write .md-fences, #write ul, #write ol, #write dl, #write form, #write hr, #write figure,
+#write-p, #write-pre, #write-ul, #write-ol, #write-dl, #write-form, #write-hr, #write-table, blockquote {
+    margin-bottom: 1.2em
+}
+
+html {
+    font-family: "font/han.otf", PingFang SC, Verdana, Helvetica Neue, Microsoft Yahei, Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, sans-serif;
+}
+
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6,
+#write-h1, #write-h2, #write-h3, #write-h4, #write-h5, #write-h6 {
+    margin-bottom: 0.6em;
+    line-height: 1.35;
+    color: #6e4832;
+    font-weight: bolder;
+}
+
+#write h1, #write-h1 {
+    font-size: 2.4em;
+    padding-bottom: 0.3em;
+    border-bottom: 3px double #eee;
+}
+
+#write h2, #write-h2 {
+    font-size: 1.8em;
+}
+
+#write h3, #write-h3 {
+    font-size: 1.6em;
+}
+
+#write h4, #write-h4 {
+    font-size: 1.4em;
+}
+
+#write h5, #write h6, #write-h5, #write-h6 {
+    font-size: 1.2em;
+}
+
+/* 在文章中的 ul 和 ol 的样式 */
+#write ul, #write-ul {
+    margin-left: 1.3em;
+    list-style: disc;
+}
+
+#write ol, #write-ol {
+    list-style: decimal;
+    margin-left: 1.9em;
+}
+
+#write li ul, #write li ol, #write-ul ul, #write-ul ol, #write-ol ul, #write-ol ol {
+    margin-bottom: 0.8em;
+    margin-left: 2em;
+}
+
+#write li ul, #write-ul ul, #write-ol ul {
+    list-style: circle;
+}
+
+[mdtype="table_row"] > th,
+[mdtype="table_row"] > td {
+    border: 1px solid #ddd;
+    padding: 0.5em 1em;
+    color: rgba(110, 72, 50, 0.74);
+}
+
+#write table th, #write-table th {
+    background: #fbfbfb;
+}
+
+#write table thead th, #write-table thead th {
+    background: rgba(251, 240, 211, 0.76);
+}
+
+#write table caption {
+    border-bottom: none;
+}
+
+#write em {
+    font-weight: inherit;
+    font-style: inherit;
+}
+
+li > p {
+    margin-bottom: 0 !important;
+}
+
+/* Responsive images */
+#write img {
+    max-width: 100%;
+}
+
+a.md-toc-inner {
+    border-bottom: 0 !important;
+}
+
+.md-toc-h1:first-of-type:last-of-type {
+    display: none;
+}
+
+.md-toc {
+    font-size: inherit;
+}
+
+.md-toc-h1 .md-toc-inner {
+    font-weight: normal;
+}
+
+.md-table-edit th {
+    padding: 0 !important;
+    border: 0 !important;
+}
+
+.mac-seamless-mode #write {
+    min-height: calc(100vh - 6em - 20px);
+}
+
+.typora-quick-open-item.active {
+    color: var(--active-file-text-color);
+}
+
+*.in-text-selection, ::selection {
+    background: var(--active-file-bg-color);
+    text-shadow: none;
+    color: white;
+}
+
+.btn-primary {
+    background-color: #2d2d2d;
+    border-color: #020202;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary.focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
+    background-color: #4e4c4e;
+    border: #4e4c4e;
+}
+
+#preference-dialog .modal-content {
+    background: #6e757a;
+    --bg-color: #6e757a;
+    --text-color: #f1f1f1;
+    color: #f1f1f1;
+}
+
+/* 角标颜色 */
+sup.md-footnote {
+    color: #6e4832;
+}
+
+.task-list {
+    list-style: none !important;
+}
+
+/* checked box 效果 */
+.task-list-item input {
+    width: 1.25rem;
+    height: 1.25rem;
+    display: block;
+    -webkit-appearance: initial;
+    left: -18px;
+}
+
+.task-list-item input:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.task-list-item input:before {
+    border: 2px solid #6e4832;
+    border-radius: 1.2rem;
+    width: 1.2rem;
+    height: 1.2rem;
+    content: ' ';
+    transition: background-color 200ms ease-in-out;
+    display: block;
+}
+
+.task-list-item input:checked:before,
+.task-list-item input[checked]:before {
+    -webkit-appearance: initial;
+    background: #6e4832;
+    border-width: 2px;
+    display: inline-block;
+    transition: background-color 200ms ease-in-out;
+}
+
+.task-list-item input:checked:after,
+.task-list-item input[checked]:after {
+    opacity: 1;
+}
+
+.task-list-item input:after {
+    opacity: 1;
+    -webkit-transition: opacity 0.05s ease-in-out;
+    -moz-transition: opacity 0.05s ease-in-out;
+    transition: opacity 0.05s ease-in-out;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    position: absolute;
+    top: 0.325rem;
+    left: 0.28125rem;
+    width: 0.6375rem;
+    height: 0.4rem;
+    border: 3px solid #f9f5ed;
+    border-top: 0;
+    border-right: 0;
+    content: ' ';
+    opacity: 0;
+}
+
+.task-list-done {
+    text-decoration: line-through;
+}
+
+.md-grid-board a:hover,
+.md-grid-board a.md-active {
+    border-color: #a1a1a1;
+    background: #f9edc5;
+}
+
+.md-grid-board tr[row='1'] a:hover,
+.md-grid-board tr[row='1'] a.md-active {
+    background: #5e3e2b;
+}
+
+
+
+
+</style><title>外语单词批量查询软件page</title>
 </head>
-
-<body background='https://api.ixiaowai.cn/api/api.php'
-    style="background-size:100%; background-repeat:no-repeat; background-attachment:fixed;">
-    <div>
-        <ul class = "x">
-            <li><h2 align="center"> 目录 </h2></li>
-            <li><a href="https://github.com/what-is-me/">Home</a></li>
-            <li><a class="active" href="#外语单词批量查询软件"><strong>外语单词批量查询软件</strong></a></li>
-            <li><a href="#目标用户">目标用户</a></li>
-            <li><a href="#查词源的选择">查词源的选择</a></li>
-            <li><a href="#被查询的单词列表文件格式">被查询的单词列表文件格式</a></li>
-            <li><a href="https://github.com/what-is-me/wordlisttranslate/releases/">下载</a></li>
-            <li><a href="#版本更新">版本更新</a></li>
-            <ul>
-                <li><a href="https://github.com/what-is-me/WordListEnquiry/releases/tag/1.0">v1.0</a></li>
-                <li><a href="https://github.com/what-is-me/WordListEnquiry/releases/tag/1.1">v1.1</a></li>
-                <li><a href="https://github.com/what-is-me/WordListEnquiry/releases/tag/1.2">v1.2</a></li>
-                <li><a href="https://github.com/what-is-me/WordListEnquiry/releases/tag/1.3">v1.3</a></li>
-
-            </ul>
-        </ul>
-    </div>
-    <div class="div1">
-        <h1 id='外语单词批量查询软件' align="center">外语单词批量查询软件</h1>
-        <div align="center">
-            <p style="font-family: 'Times New Roman', Times, serif;font-style: italic;font-weight: bold;">
-                Author:
-                <a href='https://github.com/what-is-me' class="o">what-is-me</a>
-            </p>
-            <p class="s">
-                <a href='https://github.com/what-is-me/WordListEnquiry'>View on GitHub </a>
-                <a href='https://github.com/what-is-me/wordlisttranslate/releases/'> Release</a>
-        </div>
-        这是一个简单的爬虫程序，用于批量查询外语（不只有英语哦）单词。<br />
-        我为它做了有图形界面，以方便教师和学生使用。<br />
-        希望有一颗小星星鼓励一下⭐<br />
-        参考于17年停更的老项目<a href='https://github.com/ztjryg4/QueryMoreWords'>QueryMoreWords</a></p>
-        <h2 id='目标用户'><strong>目标用户</strong></h2>
-        <ul>
-            <li>
-                <p class="s">初中、高中生、考研党、老师：在做完一批外文阅读后，你记录下了一批生词，准备自己背诵/做成ppt讲解。</p>
-                <p class="s">这时你决定：</p>
-                <ol start=''>
-                    <li>使用有道/欧路/金山一个一个查，并在<code>Ctrl+C</code>，<code>Ctrl+V</code>的帮助下做成《单词-解释》表格。</li>
-                    <li>使用本软件简化上述步骤。</li>
-
-                </ol>
-            </li>
-            <li>
-                <p class="s">小语种学员（法/日）：你有一份纯单词的（无解释）考试大纲，准备在考前背诵。</p>
-                <p class="s">这时你打算：</p>
-                <ol start=''>
-                    <li>在百度文库上下载<del>排版可能不符合你心意的</del>付费的别人做好的表格。</li>
-                    <li>使用本软件<strong>免费</strong>制作带解释的考试大纲。</li>
-
-                </ol>
-            </li>
-
-        </ul>
-        <h2 id='查词源的选择'><strong>查词源的选择</strong></h2>
-        <ul>
-            <li><strong>金山</strong>有时候会维护，无法使用</li>
-            <li><strong>海词</strong>查询速度<strong>最快</strong></li>
-            <li><strong>法语、日语</strong>目前只有有道源</li>
-            <li><strong>德语</strong>目前只有德语助手这个源</li>
-            <li>某些源查特定单词会崩溃，是网页问题</li>
-
-        </ul>
-        <h2 id='被查询的单词列表文件格式'><strong>被查询的单词列表文件格式</strong></h2>
-        <ul>
-            <li>必须是<code>xxx.txt</code>/<code>xxx.xlsx</code></li>
-            <li>文档格式要求：</li>
-
-        </ul>
-        <figure>
-            <table id="customers">
-                <thead>
-                    <tr>
-                        <th style='text-align:center;'>文件类型</th>
-                        <th style='text-align:center;'>单词/词组放在哪</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td style='text-align:center;'>&quot;xxx.txt&quot;</td>
-                        <td style='text-align:center;'>每行一个，可以空行</td>
-                    </tr>
-                    <tr>
-                        <td style='text-align:center;'>&quot;xxx.xlsx&quot;</td>
-                        <td style='text-align:center;'>A列，从第1行开始，每个单元格一个，不要空行</td>
-                    </tr>
-                </tbody>
-            </table>
-        </figure>
-        <ul>
-            <li>各语言情况：</li>
-
-        </ul>
-        <figure>
-            <table id="customers">
-                <thead>
-                    <tr>
-                        <th style='text-align:center;'>语言</th>
-                        <th style='text-align:center;'>支持</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td style='text-align:center;'>英语</td>
-                        <td style='text-align:center;'>支持词组</td>
-                    </tr>
-                    <tr>
-                        <td style='text-align:center;'>日语</td>
-                        <td style='text-align:center;'>仅支持假名</td>
-                    </tr>
-                    <tr>
-                        <td style='text-align:center;'>法语</td>
-                        <td style='text-align:center;'>支持词组</td>
-                    </tr>
-                    <tr>
-                        <td style='text-align:center;'>德语</td>
-                        <td style='text-align:center;'>不支持词组</td>
-                    </tr>
-                </tbody>
-            </table>
-        </figure>
-        <h2 id='下载download'>下载：<a href='https://github.com/what-is-me/wordlisttranslate/releases/'>Download</a></h2>
-        <h2 id='版本更新'>各版本更新情况：</h2>
-        <h3 id='v10------基础版本'><a href='https://github.com/what-is-me/WordListEnquiry/releases/tag/1.0'>v1.0——基础版本</a>
-        </h3>
-        <ul>
-            <li>拥有<code>有道</code>,<code>金山</code>,<code>bing</code>,<code>海词</code>四个英语单词查询源。</li>
-
-        </ul>
-        <h3 id='v11------少量改动'><a href='https://github.com/what-is-me/WordListEnquiry/releases/tag/1.1'>v1.1——少量改动</a>
-        </h3>
-        <ul>
-            <li>
-                <p class="s">更新内容：</p>
-                <ul>
-                    <li><del>如果短语无法查询到结果，则<strong>全部</strong>替换为翻译函数</del>如果短语无法查询到结果，且在第二列有内容，则不会替换为翻译函数 。</li>
-
-                </ul>
-            </li>
-
-        </ul>
-        <h3 id='v12------法日'><a href='https://github.com/what-is-me/WordListEnquiry/releases/tag/1.2'>v1.2——+法、日</a>
-        </h3>
-        <ul>
-            <li>
-                <p class="s">更新内容：</p>
-                <ul>
-                    <li>增添了有道法语/日语查询源（有道）。</li>
-                    <li>日语请全部使用假名（平/片均可），含有汉字会无法查出。</li>
-                    <li>修改了英文有道查询函数。</li>
-
-                </ul>
-            </li>
-
-        </ul>
-        <h3 id='v13------德'><a href='https://github.com/what-is-me/WordListEnquiry/releases/tag/1.3'>v1.3——+德</a></h3>
-        <ul>
-            <li>
-                <p class="s">更新内容：</p>
-                <ul>
-                    <li>增加了德语（仅限单词）（德语助手）。</li>
-                </ul>
-            </li>
-
-        </ul>
-    </div>
+<body class='typora-export os-windows'><div class='typora-export-content'>
+<div id='write'  class=''><h1 id='外语单词批量查询软件'><span>外语单词批量查询软件</span></h1><p><span>这是一个简单的爬虫程序，用于批量查询外语（不只有英语哦）单词。</span>
+<span>我为它做了有图形界面，以方便教师和学生使用。</span>
+<span>希望有一颗小星星鼓励一下⭐</span>
+<span>参考于17年停更的老项目</span><a href='https://github.com/ztjryg4/QueryMoreWords'><span>QueryMoreWords</span></a></p><h2 id='为谁准备的目标用户）'><strong><span>为谁准备的</span></strong><span>（目标用户）</span></h2><ul><li><p><span>初中、高中生、考研党、老师：在做完一批外文阅读后，你记录下了一批生词，准备自己背诵/做成ppt讲解。</span></p><p><span>这时你决定：</span></p><ol start='' ><li><span>使用有道/欧路/金山一个一个查，并在</span><code>Ctrl+C</code><span>，</span><code>Ctrl+V</code><span>的帮助下做成《单词-解释》表格。</span></li><li><span>使用本软件简化上述步骤。</span></li></ol></li><li><p><span>小语种学员（法/日）：你有一份纯单词的（无解释）考试大纲，准备在考前背诵。</span></p><p><span>这时你打算：</span></p><ol start='' ><li><span>在百度文库上下载</span><del><span>排版可能不符合你心意的</span></del><span>付费的别人做好的表格。</span></li><li><span>使用本软件</span><strong><span>免费</span></strong><span>制作带解释的考试大纲。</span></li></ol></li></ul><h2 id='查词源的选择'><strong><span>查词源的选择</span></strong></h2><ul><li><strong><span>金山</span></strong><span>有时候会维护，无法使用</span></li><li><strong><span>海词</span></strong><span>查询速度</span><strong><span>最快</span></strong></li><li><strong><span>法语、日语</span></strong><span>目前只有有道源</span></li><li><strong><span>德语</span></strong><span>目前只有德语助手这个源</span></li><li><span>某些源查特定单词会崩溃，是网页问题</span></li></ul><h3 id='被查询的单词列表文件格式'><strong><span>被查询的单词列表文件格式</span></strong></h3><ul><li><span>必须是</span><code>xxx.txt</code><span>/</span><code>xxx.xlsx</code></li><li><span>文档格式要求：</span></li></ul><figure><table><thead><tr><th style='text-align:center;' ><span>文件类型</span></th><th style='text-align:center;' ><span>单词/词组放在哪</span></th></tr></thead><tbody><tr><td style='text-align:center;' ><span>&quot;xxx.txt&quot;</span></td><td style='text-align:center;' ><span>每行一个，可以空行</span></td></tr><tr><td style='text-align:center;' ><span>&quot;xxx.xlsx&quot;</span></td><td style='text-align:center;' ><span>A列，从第1行开始，每个单元格一个，不要空行</span></td></tr></tbody></table></figure><ul><li><span>各语言情况：</span></li></ul><figure><table><thead><tr><th style='text-align:center;' ><span>语言</span></th><th style='text-align:center;' ><span>支持</span></th></tr></thead><tbody><tr><td style='text-align:center;' ><span>英语</span></td><td style='text-align:center;' ><span>支持词组</span></td></tr><tr><td style='text-align:center;' ><span>日语</span></td><td style='text-align:center;' ><span>仅支持假名</span></td></tr><tr><td style='text-align:center;' ><span>法语</span></td><td style='text-align:center;' ><span>支持词组</span></td></tr><tr><td style='text-align:center;' ><span>德语</span></td><td style='text-align:center;' ><span>不支持词组</span></td></tr></tbody></table></figure><h2 id='下载download'><span>下载：</span><a href='https://github.com/what-is-me/wordlisttranslate/releases/'><span>download</span></a></h2><h2 id='各版本更新情况'><span>各版本更新情况：</span></h2><h3 id='v10'><a href='https://github.com/what-is-me/WordListEnquiry/releases/tag/1.0'><span>v1.0</span></a></h3><ul><li><span>拥有</span><code>有道</code><span>,</span><code>金山</code><span>,</span><code>bing</code><span>,</span><code>海词</code><span>四个英语单词查询源。</span></li></ul><h3 id='v11'><a href='https://github.com/what-is-me/WordListEnquiry/releases/tag/1.1'><span>v1.1</span></a></h3><ul><li><p><a href='https://gitee.com/whatisme/wordlisttranslate/releases/v1.1'><span>[v1.1 download from gitee]</span></a></p></li><li><p><span>更新内容：</span></p><ul><li><del><span>如果短语无法查询到结果，则</span><strong><span>全部</span></strong><span>替换为翻译函数</span></del><span>如果短语无法查询到结果，且在第二列有内容，则不会替换为翻译函数 。</span></li></ul></li></ul><h3 id='v12'><a href='https://github.com/what-is-me/WordListEnquiry/releases/tag/1.2'><span>v1.2</span></a></h3><ul><li><p><span>更新内容：</span></p><ul><li><span>增添了有道法语/日语查询源（有道）。</span></li><li><span>日语请全部使用假名（平/片均可），含有汉字会无法查出。</span></li></ul></li></ul><h3 id='v13'><a href='https://github.com/what-is-me/WordListEnquiry/releases/tag/1.3'><span>v1.3</span></a></h3><ul><li><p><span>更新内容：</span></p><ul><li><span>增加了德语（仅限单词）（德语助手）</span></li></ul></li></ul></div></div>
 </body>
-
 </html>
