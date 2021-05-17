@@ -62,6 +62,7 @@
             margin: 0;
             padding: 0;
             width: 12%;
+            overflow:hidden;
             background-color: rgba(255, 255, 255, 0.8);
             height: 100%;
             /* 全高 */
@@ -72,6 +73,9 @@
         }
 
         li a {
+            overflow:hidden;
+            text-overflow:ellipsis; 
+            white-space: nowrap;
             display: block;
             color: #000;
             padding: 8px 16px;
