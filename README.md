@@ -1,4 +1,6 @@
 # ~~英语~~外语单词批量查询软件[[主页]](https://what-is-me.github.io/WordListEnquiry/)
+## 外加了接口，可以调用函数search_word(word)获取word的解释了。
+## 只需要在power shell里`pip install Dict-search`，就可以在python里import这个包了。
 <a href="https://github.com/what-is-me/WordListEnquiry/stargazers"><img alt="GitHub issues" src="https://img.shields.io/github/stars/what-is-me/WordListEnquiry"></a>
 <a href="https://github.com/what-is-me/WordListEnquiry/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/what-is-me/WordListEnquiry"></a>
 <a href="https://github.com/what-is-me/WordListEnquiry/network"><img alt="GitHub forks" src="https://img.shields.io/github/forks/what-is-me/WordListEnquiry"></a>
