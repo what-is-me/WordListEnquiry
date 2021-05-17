@@ -103,4 +103,4 @@ ps：代码肯定是最新版本的
 ### [v1.4](https://github.com/what-is-me/WordListEnquiry/releases/tag/1.4)
 - 更新内容：
   - 优化了查询函数
-  - v1.2的改动回退至v1.1
+  - v1.1的改动回退至v1.0
