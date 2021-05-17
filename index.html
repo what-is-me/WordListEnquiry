@@ -149,11 +149,14 @@
     <div class="div2">
         <ul class="x">
             <li><a href="https://github.com/what-is-me/">Home</a></li>
-            <li><h2 align="center"> 目录 </h2></li>
+            <li>
+                <h2 align="center"> 目录 </h2>
+            </li>
             <li><a class="active" href="#外语单词批量查询软件"><strong>外语单词批量查询软件</strong></a></li>
             <li><a href="#目标用户">目标用户</a></li>
             <li><a href="#查词源的选择">查词源的选择</a></li>
             <li><a href="#被查询的单词列表文件格式">被查询的单词列表文件格式</a></li>
+            <li><a href="#module介绍">module介绍</a></li>
             <li><a href="https://github.com/what-is-me/wordlisttranslate/releases/">下载(Github)</a></li>
             <li><a href="https://gitee.com/whatisme/wordlisttranslate/releases">下载(Gitee)</a></li>
             <li><a href="#版本更新">版本更新</a></li>
@@ -279,6 +282,20 @@
                 </tbody>
             </table>
         </figure>
+        <h2 id='module介绍'>便捷的module介绍</h2>
+        <p>
+            >>为了后续更便捷的开发和更方便的自定义使用，特地将查询函数包装进module中，并上传至pypi。<br />
+            >>可以直接            <code>pip install Dict-search</code><br />
+            >>并在python程序中    <code>import Dict-search</code>    使用<br />
+            >>module中有3个函数
+        </p>
+        <ul>
+            <li>查询单个单词/词组的详细解释： <code>def search_word(word, choice=1):</code></li>
+            <li>查询单词/词组列表，并生成[字典(dict)]： <code>def search_words_todict(wordlist, choice=1):</code></li>
+            <li>查询单词/词组列表，并生成[列表(list)]： <code>def search_words_tolist(wordlist, choice=1, div=" : ",
+                    needword=True):</code></li>
+        </ul>
+        <p><a href='https://github.com/what-is-me/WordListEnquiry/tree/main/Dict-search'>详细介绍</a></p>
         <h2 id='下载download'>下载：<a href='https://github.com/what-is-me/wordlisttranslate/releases/'>[Download from
                 Github]</a><a href='https://gitee.com/whatisme/wordlisttranslate/releases'>[Download from Gitee]</a>
         </h2>
