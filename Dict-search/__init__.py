@@ -5,7 +5,7 @@ Github: https://github.com/what-is-me
 LeetCode: https://leetcode-cn.com/u/what-is-me/
 Date: 2021-05-17 23:22:14
 LastEditors: what-is-me
-LastEditTime: 2021-05-18 00:57:58
+LastEditTime: 2021-05-19 12:33:23
 Description: 查询单个单词/词组意思
 '''
 import re
@@ -207,11 +207,11 @@ choice:
 默认有道查询源
 functions:
     查询单个单词/词组：
-        search_word(word, choice=1)
+        search(word, choice=1)
     查询单词/词组列表，并生成[字典(dict)]：
-        search_words_todict(wordlis, choice=1)
+        wordlist_todict(wordlis, choice=1)
     查询单词/词组列表，并生成列表：
-        search_words_tolist(wordlist, choice=1, div = " : ", needword = True)
+        wordlist_tolist(wordlist, choice=1, div = " : ", needword = True)
         div是输出的list里单词和意思之间的分隔符
         needword为False则表示return纯解释列表
 ==================================================================================
@@ -219,22 +219,22 @@ functions:
     print(help)
 
 
-def search_word(word, choice=1):
+def search(word, choice=1):
     _url = url(choice) + phrase(choice, word)
     _html = getHtml(_url)
     return getImg(_html, choice)
 
 
-def search_words_todict(wordlist, choice=1):
+def wordlist_todict(wordlist, choice=1):
     _dict = {}
     for word in wordlist:
-        _dict[word] = search_word(word, choice)
+        _dict[word] = search(word, choice)
     return _dict
 
 
-def search_words_tolist(wordlist, choice=1, div=" : ", needword=True):
+def wordlist_tolist(wordlist, choice=1, div=" : ", needword=True):
     result_list = []
     for word in wordlist:
         result_list.append(
-            ((word + div)if needword else "") + search_word(word, choice))
+            ((word + div)if needword else "") + search(word, choice))
     return result_list
