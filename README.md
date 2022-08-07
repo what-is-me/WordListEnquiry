@@ -109,3 +109,4 @@ ps：代码肯定是最新版本的
 - 更新内容：
   - 优化了查询函数
   - v1.1的改动回退至v1.0
+> 1.4好像忘了传exe了，去[gitee](https://gitee.com/whatisme/wordlisttranslate/releases)下载吧
