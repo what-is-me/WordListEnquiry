@@ -90,7 +90,7 @@ ps：代码肯定是最新版本的
   - `pip install requests`
 
 ### [v1.1](https://github.com/what-is-me/WordListEnquiry/releases/tag/1.1)
-- [[v1.1 download from gitee]](https://gitee.com/whatisme/wordlisttranslate/releases/v1.1)
+- [[v1.1 download from gitee]](https://gitee.com/whatisme/wordlisttranslate/releases/tag/1.1)
 - 更新内容：~~如果短语无法查询到结果，则**全部**替换为翻译函数~~如果短语无法查询到结果，且在第二列有值，则不会替换为翻译函数 
 
 ### [v1.2](https://github.com/what-is-me/WordListEnquiry/releases/tag/1.2)
