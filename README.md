@@ -1,6 +1,6 @@
 # **更新了网页版批量查词**（2023.1.11）
 https://what-is-me.github.io/WordListEnquiry/Search.html
-* 只支持金山词霸查询
+* 只支持金山词霸英文查询
 * 不建议大批量查询
 * 添加了导出为xlsx功能
 
