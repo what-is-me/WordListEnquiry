@@ -1,0 +1,162 @@
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <title>搜索</title>
+    <script
+        src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script
+        src="https://cdn.sheetjs.com/xlsx-latest/package/dist/xlsx.full.min.js"></script>
+</head>
+<style>
+    .left {
+        width: 25%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+
+    .right {
+        width: 75%;
+        height: 100%;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    #words {
+        margin: 5%;
+        margin-bottom: 0;
+        width: 90%;
+        height: 85%;
+        font-size: 18px;
+    }
+
+    /* Border styles */
+    .table thead,
+    .table tr {
+        border-top-width: 1px;
+        border-top-style: solid;
+        border-top-color: rgb(235, 242, 224);
+    }
+
+    .table {
+        border-bottom-width: 1px;
+        border-bottom-style: solid;
+        border-bottom-color: rgb(235, 242, 224);
+        width: 80%;
+        margin: 5%;
+    }
+
+    /* Padding and font style */
+    .table td,
+    .table th {
+        padding: 5px 10px;
+        font-size: 18px;
+        font-family: Verdana;
+        color: rgb(149, 170, 109);
+    }
+
+    /* Alternating background colors */
+    .table tr:nth-child(even) {
+        background: rgb(230, 238, 214)
+    }
+
+    .table tr:nth-child(odd) {
+        background: #FFF
+    }
+
+    button {
+        width: 80%;
+        margin: 5% 10%;
+        height: 2.5%;
+    }
+
+    .output {
+        margin: 0;
+        width: 300px;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+</style>
+
+<body>
+    <div class="left">
+        <textarea id="words" placeholder="输入单词,每行一个"></textarea>
+        <button onclick="searchAll()">搜索</button>
+    </div>
+    <div class="right">
+        <button onclick="tableToExcel()" class="output">导出为xlsx</button>
+        <table id="trans" class="table">
+            <thead>
+                <tr>
+                    <th scope="col">单词</th>
+                    <th scope="col">解释</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+    <script>
+        class JinShanSearch {
+            search(word, trans) {
+                trans.empty();
+                let url = `https://dict-mobile.iciba.com/interface/index.php?c=word&m=getsuggest&nums=1&word=${encodeURIComponent(word)}`;
+                $.ajax({
+                    url: url,
+                    type: 'get',
+                    dataType: 'jsonp',
+                    crossDomain: true,
+                    success: function (data) {
+                        data = data.message[0];
+                        trans.append(data["paraphrase"]);
+                    },
+                    data: {}
+                });
+            }
+        }
+        /*class YouDaoSearch {
+            search(word, trans) {
+                trans.empty();
+                let url = `https://dict.youdao.com/jsonapi?q=${encodeURIComponent(word)}`;
+                $.ajax({
+                    url: url,
+                    type: 'get',
+                    dataType: 'jsonp',
+                    crossDomain: true,
+                    format: 'json',
+                    success: function (data) {
+                        let trs = data.ec.word[0].trs;
+                        console.log(trs);
+                        for (const tr of trs) {
+                            trans.append(tr.tr[0].l.i[0]);
+                        }
+                    },
+                    data: {}
+                });
+            }
+        }*/
+        search = new JinShanSearch();
+        function searchAll() {
+            let words = $("#words").val().split("\n")
+            let ansArea = $("#trans")
+            ansArea.empty();
+            ansArea.append(`<thead><tr><th scope="col">单词</th><th scope="col">解释</th></tr></thead>`)
+            for (const word of words) {
+                if (word.trim() === "") continue;
+                let trans = $(`<td></td>`);
+                search.search(word, trans);
+                let row = $(`<tr><th scope="row">${word}</th></tr>`);
+                row.append(trans);
+                ansArea.append(row);
+            }
+        }
+        function tableToExcel() {
+            var wb = XLSX.utils.table_to_book(document.getElementById("trans"));
+            XLSX.writeFile(wb, "单词表.xlsx");
+        }
+    </script>
+</body>
+
+</html>
