@@ -1,3 +1,9 @@
+# **更新了网页版批量查词**（2023.1.11）
+https://what-is-me.github.io/WordListEnquiry/Search.html
+* 只支持金山词霸查询
+* 不建议大批量查询
+* 添加了导出为xlsx功能
+
 # ~~英语~~外语单词批量查询软件[[主页]](https://what-is-me.github.io/WordListEnquiry/)
 > 外加了接口，可以调用函数search_word(word)获取word的解释了。<br/>
 > 只需要在power shell里`pip install wordlistenquiry`，就可以在python里import这个包了。<br/>
